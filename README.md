@@ -3,7 +3,7 @@
 **Transforming plastic waste into clean energy for a sustainable future in Cameroon**
 
 [![Django](https://img.shields.io/badge/Django-4.2.7-green.svg)](https://www.djangoproject.com/)
-[![Bootstrap](https://img.shields.io/badge/Bootstrap-5.3.0-purple.svg)](https://getbootstrap.com/)
+[![Bootstrap](https://img.shields.io/badge/Bootstrap-5.3.0-purple.svg)](https://getbootstrap.com/) MORELDEV237
 [![Python](https://img.shields.io/badge/Python-3.8%2B-blue.svg)](https://python.org)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
@@ -37,7 +37,3 @@ python -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
 
-# Configure and run
-cp .env.example .env
-python manage.py migrate
-python manage.py runserver
