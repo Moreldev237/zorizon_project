@@ -1,0 +1,157 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="container">
+        <div class="row align-items-center min-vh-80">
+            <div class="col-lg-8 mx-auto text-center text-white">
+                <h1 class="display-4 fw-bold mb-4">Du plastique à l'énergie : un avenir durable pour le Cameroun</h1>
+                <p class="lead mb-5">Transformer les déchets plastiques en carburant propre pour un avenir plus vert</p>
+                <div class="d-flex justify-content-center gap-3 flex-wrap">
+                    <a href="{% url 'technology' %}" class="btn btn-light btn-lg">Découvrir notre technologie</a>
+                    <a href="{% url 'contact' %}" class="btn btn-outline-light btn-lg">Devenir Partenaire</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Key Statistics -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="row text-center g-4">
+            <div class="col-md-3">
+                <div class="stat-card bg-white p-4 rounded shadow-sm">
+                    <h3 class="text-primary-green display-4 fw-bold">50+</h3>
+                    <p class="mb-0 fw-semibold">Tonnes de plastique recyclées</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="stat-card bg-white p-4 rounded shadow-sm">
+                    <h3 class="text-primary-green display-4 fw-bold">25K+</h3>
+                    <p class="mb-0 fw-semibold">Litres de carburant produits</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="stat-card bg-white p-4 rounded shadow-sm">
+                    <h3 class="text-primary-green display-4 fw-bold">50+</h3>
+                    <p class="mb-0 fw-semibold">Emplois créés</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="stat-card bg-white p-4 rounded shadow-sm">
+                    <h3 class="text-primary-green display-4 fw-bold">5</h3>
+                    <p class="mb-0 fw-semibold">Communautés impactées</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Mission Section -->
+<section class="py-5">
+    <div class="container">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-6">
+                <h2 class="text-primary-green mb-4">Notre Mission</h2>
+                <p class="lead mb-4">
+                    ZORIZON s'engage à transformer la crise des déchets plastiques en opportunité énergétique 
+                    pour le Cameroun. Notre technologie innovante convertit les déchets plastiques en carburant 
+                    propre, créant ainsi une économie circulaire durable.
+                </p>
+                <div class="d-flex gap-3">
+                    <a href="{% url 'about' %}" class="btn btn-primary-green btn-lg">En savoir plus</a>
+                    <a href="{% url 'impact' %}" class="btn btn-outline-primary-green btn-lg">Voir notre impact</a>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09" 
+                     alt="Transformation des déchets" class="img-fluid rounded shadow">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Technology Preview -->
+<section class="py-5 bg-primary-green text-white">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <h2 class="mb-4">Technologie Innovante</h2>
+                <p class="lead mb-4">
+                    Notre procédé unique transforme le plastique non-recyclable en carburant propre 
+                    grâce à la pyrolyse avancée.
+                </p>
+                <ul class="list-unstyled">
+                    <li class="mb-3"><i class="fas fa-check me-2"></i> Conversion à haut rendement</li>
+                    <li class="mb-3"><i class="fas fa-check me-2"></i> Processus respectueux de l'environnement</li>
+                    <li class="mb-3"><i class="fas fa-check me-2"></i> Solution adaptée au contexte local</li>
+                </ul>
+                <a href="{% url 'technology' %}" class="btn btn-light btn-lg mt-3">Découvrir la technologie</a>
+            </div>
+            <div class="col-lg-6 text-center">
+                <div class="process-diagram bg-white text-dark p-4 rounded shadow">
+                    <h5 class="text-primary-green mb-4">Processus de Transformation</h5>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="text-center">
+                            <div class="bg-primary-green text-white rounded-circle mx-auto d-flex align-items-center justify-content-center mb-2" style="width: 60px; height: 60px;">
+                                <i class="fas fa-trash"></i>
+                            </div>
+                            <small>Collecte</small>
+                        </div>
+                        <i class="fas fa-arrow-right text-primary-green"></i>
+                        <div class="text-center">
+                            <div class="bg-primary-green text-white rounded-circle mx-auto d-flex align-items-center justify-content-center mb-2" style="width: 60px; height: 60px;">
+                                <i class="fas fa-recycle"></i>
+                            </div>
+                            <small>Traitement</small>
+                        </div>
+                        <i class="fas fa-arrow-right text-primary-green"></i>
+                        <div class="text-center">
+                            <div class="bg-primary-green text-white rounded-circle mx-auto d-flex align-items-center justify-content-center mb-2" style="width: 60px; height: 60px;">
+                                <i class="fas fa-fire"></i>
+                            </div>
+                            <small>Conversion</small>
+                        </div>
+                        <i class="fas fa-arrow-right text-primary-green"></i>
+                        <div class="text-center">
+                            <div class="bg-primary-green text-white rounded-circle mx-auto d-flex align-items-center justify-content-center mb-2" style="width: 60px; height: 60px;">
+                                <i class="fas fa-gas-pump"></i>
+                            </div>
+                            <small>Carburant</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+.hero-section {
+    background: linear-gradient(rgba(46, 125, 50, 0.9), rgba(46, 125, 50, 0.8)),
+                url('https://images.unsplash.com/photo-1532996122724-e3c354a0b15b') center/cover;
+    color: white;
+    padding: 120px 0;
+}
+
+.min-vh-80 {
+    min-height: 80vh;
+}
+
+.stat-card {
+    transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+}
+
+.process-diagram {
+    max-width: 500px;
+    margin: 0 auto;
+}
+</style>
+{% endblock %}

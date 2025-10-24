@@ -1,0 +1,95 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container py-5">
+    <!-- Technology Process -->
+    <div class="row mb-5">
+        <div class="col-12 text-center mb-4">
+            <h2 class="text-primary-green">Notre Processus Technologique</h2>
+        </div>
+        <div class="col-md-8 mx-auto">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title text-center">De la collecte à l'énergie</h5>
+                    <div class="process-steps mt-4">
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <div class="text-center">
+                                <div class="bg-primary-green text-white rounded-circle d-inline-flex align-items-center justify-content-center" 
+                                     style="width: 60px; height: 60px;">
+                                    <i class="fas fa-trash"></i>
+                                </div>
+                                <p class="mt-2 mb-0">Collecte du plastique</p>
+                            </div>
+                            <div class="text-center">
+                                <div class="bg-primary-green text-white rounded-circle d-inline-flex align-items-center justify-content-center" 
+                                     style="width: 60px; height: 60px;">
+                                    <i class="fas fa-recycle"></i>
+                                </div>
+                                <p class="mt-2 mb-0">Tri et préparation</p>
+                            </div>
+                            <div class="text-center">
+                                <div class="bg-primary-green text-white rounded-circle d-inline-flex align-items-center justify-content-center" 
+                                     style="width: 60px; height: 60px;">
+                                    <i class="fas fa-fire"></i>
+                                </div>
+                                <p class="mt-2 mb-0">Conversion thermique</p>
+                            </div>
+                            <div class="text-center">
+                                <div class="bg-primary-green text-white rounded-circle d-inline-flex align-items-center justify-content-center" 
+                                     style="width: 60px; height: 60px;">
+                                    <i class="fas fa-gas-pump"></i>
+                                </div>
+                                <p class="mt-2 mb-0">Production de carburant</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Current Projects -->
+    <div class="row mb-5">
+        <div class="col-12 text-center mb-4">
+            <h2 class="text-primary-green">Projets en Cours</h2>
+        </div>
+        {% for project in projects %}
+        <div class="col-md-6 mb-4">
+            <div class="card h-100">
+                {% if project.image %}
+                <img src="{{ project.image.url }}" class="card-img-top" alt="{{ project.title }}">
+                {% endif %}
+                <div class="card-body">
+                    <h5 class="card-title">{{ project.title }}</h5>
+                    <p class="card-text">{{ project.description }}</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <small class="text-muted">
+                            <i class="fas fa-map-marker-alt"></i> {{ project.location }}
+                        </small>
+                        <span class="badge {% if project.status == 'completed' %}bg-success{% elif project.status == 'in_progress' %}bg-warning{% else %}bg-secondary{% endif %}">
+                            {{ project.get_status_display }}
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <!-- Partners -->
+    <div class="row">
+        <div class="col-12 text-center mb-4">
+            <h2 class="text-primary-green">Nos Partenaires</h2>
+        </div>
+        {% for partner in partners %}
+        <div class="col-md-3 col-6 text-center mb-4">
+            {% if partner.logo %}
+            <img src="{{ partner.logo.url }}" alt="{{ partner.name }}" class="partner-logo img-fluid">
+            {% endif %}
+            <p class="mt-2">{{ partner.name }}</p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

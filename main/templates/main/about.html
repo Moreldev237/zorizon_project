@@ -1,0 +1,68 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container py-5">
+    <!-- Vision & Mission -->
+    <div class="row mb-5">
+        <div class="col-lg-6 mb-4">
+            <h2 class="text-primary-green mb-4">Notre Vision</h2>
+            <p class="lead">
+                Un Cameroun où chaque déchet plastique devient une ressource précieuse, 
+                contribuant à l'autonomie énergétique et à la protection de l'environnement.
+            </p>
+        </div>
+        <div class="col-lg-6">
+            <h2 class="text-primary-green mb-4">Notre Mission</h2>
+            <p class="lead">
+                Développer et déployer des technologies innovantes de conversion des déchets plastiques 
+                en carburant propre, tout en créant des emplois durables et en sensibilisant les communautés 
+                à la gestion responsable des déchets.
+            </p>
+        </div>
+    </div>
+
+    <!-- Values -->
+    <div class="row mb-5">
+        <div class="col-12 text-center mb-4">
+            <h2 class="text-primary-green">Nos Valeurs</h2>
+        </div>
+        <div class="col-md-4 text-center mb-4">
+            <i class="fas fa-lightbulb fa-3x text-primary-green mb-3"></i>
+            <h4>Innovation</h4>
+            <p>Nous repoussons les limites de la technologie pour des solutions durables.</p>
+        </div>
+        <div class="col-md-4 text-center mb-4">
+            <i class="fas fa-leaf fa-3x text-primary-green mb-3"></i>
+            <h4>Écologie</h4>
+            <p>La protection de l'environnement guide chacune de nos actions.</p>
+        </div>
+        <div class="col-md-4 text-center mb-4">
+            <i class="fas fa-hands-helping fa-3x text-primary-green mb-3"></i>
+            <h4>Impact Social</h4>
+            <p>Nous créons de la valeur pour les communautés locales.</p>
+        </div>
+    </div>
+
+    <!-- Team -->
+    <div class="row">
+        <div class="col-12 text-center mb-5">
+            <h2 class="text-primary-green">Notre Équipe</h2>
+        </div>
+        {% for member in team_members %}
+        <div class="col-lg-4 col-md-6">
+            <div class="team-member">
+                {% if member.photo %}
+                <img src="{{ member.photo.url }}" alt="{{ member.name }}" class="img-fluid">
+                {% else %}
+                <img src="https://via.placeholder.com/150" alt="{{ member.name }}" class="img-fluid">
+                {% endif %}
+                <h5>{{ member.name }}</h5>
+                <p class="text-muted">{{ member.position }}</p>
+                <p>{{ member.bio }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
